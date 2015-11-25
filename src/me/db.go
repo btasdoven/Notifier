@@ -65,14 +65,14 @@ func FromFile(file string) (db DBModel) {
 func NewDB() (db DBModel) {
 	db.User = make(map[string]UserModel)
 	db.User["100001"] = UserModel{"100001", "Batuhan Tasdoven", "btasdoven@gmail.com", "123123123", []string{"200001", "200002", "200003"}, []string{}, ""}
-	db.User["100002"] = UserModel{"100002", "Cagla Istanbulluoglu", "cagla.istanbulluoglu@gmail.com", "321321321", []string{"200002"}, []string{}, ""}	
+	db.User["100002"] = UserModel{"100002", "Cagla Istanbulluoglu", "cagla.istanbulluoglu@gmail.com", "321321321", []string{"200004"}, []string{}, ""}	
 	db.UserCounter = 100002
 	
 	db.Notif = make(map[string]NotifModel)
 	db.Notif["200001"] = NotifModel{"200001", "100001", "100002", "Ilacini ictin mi askim? :)", []int{1443805200, 1443855600}, 86400, 300}
 	db.Notif["200002"] = NotifModel{"200002", "100001", "100002", "Bugun 50mg askim :)", []int{1445486400}, 3600*48, 7200}
 	db.Notif["200003"] = NotifModel{"200003", "100001", "100002", "Bugun 75mg askim :)", []int{1445572800}, 3600*48, 7200}
-	db.Notif["200004"] = NotifModel{"200004", "100002", "100001", "Caglayi sev :)", []int{1443805200}, 37200, 3600}	
+	db.Notif["200004"] = NotifModel{"200004", "100002", "100001", "Caglayi sev :)", []int{1443805200}, 37200, 7200}	
 	db.NotifCounter = 200004
 	
 	db.Card = make(map[string]CardModel)	

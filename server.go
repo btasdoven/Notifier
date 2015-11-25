@@ -17,6 +17,7 @@ func HeapRun() {
 	tsHeap := me.NewHeap("notifs")
 	now := int(time.Now().Unix())
 	
+
 	for _, notif := range db.Notif {
 		for _, ts := range notif.StartTS {
 			for (ts < now) {
@@ -26,6 +27,7 @@ func HeapRun() {
 		}
 	}
 		
+
 	for {
 		ts := int(time.Now().Unix())
 		for ( tsHeap.Min() > -1 && ts >= tsHeap.Min() ) {
@@ -73,7 +75,6 @@ func main() {
 	
 //	db = me.NewDB()
 	db = me.FromFile("dumb.json")
-	defer db.Save()
 //	gin.SetMode(gin.ReleaseMode)
 	
 	r := gin.Default()    
@@ -85,7 +86,7 @@ func main() {
 	r.GET("/heap", Heap)	
 	
 	wg.Add(1)	 	  	      
-	go r.Run("144.122.71.77:8080")
+	go r.Run("100.77.172.74:8080")
     
 	HeapRun()
 }
